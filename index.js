@@ -17,7 +17,7 @@ const headers = {
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 app.set('view engine', 'pug');
-
+// GET / - Renders homepage with table of all custom object records
 app.get('/', async (req, res) => {
   const url = `https://api.hubapi.com/crm/v3/objects/${OBJECT_TYPE}?properties=${PROPERTIES.join(',')}`;
   try {
@@ -32,14 +32,14 @@ app.get('/', async (req, res) => {
     res.status(500).send('Error fetching records.');
   }
 });
-
+// GET /update-cobj - Renders form for creating a new custom object record
 app.get('/update-cobj', (req, res) => {
   res.render('updates', {
     title: 'Update Custom Object Form | Integrating With HubSpot I Practicum',
     properties: PROPERTIES
   });
 });
-
+// POST /update-cobj - Creates a new custom object record from form data
 app.post('/update-cobj', async (req, res) => {
   const url = `https://api.hubapi.com/crm/v3/objects/${OBJECT_TYPE}`;
   const properties = {};
