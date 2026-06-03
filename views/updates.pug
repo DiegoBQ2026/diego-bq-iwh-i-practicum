@@ -1,0 +1,14 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/css/style.css')
+  body
+    h1 Update Custom Object
+    a(href='/') Return to the homepage
+    form(action='/update-cobj', method='POST')
+      each prop in properties
+        div
+          label(for=prop)= prop
+          input(type='text', name=prop, id=prop, required)
+      button(type='submit') Submit
