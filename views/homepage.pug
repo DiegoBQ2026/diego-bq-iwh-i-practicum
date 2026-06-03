@@ -15,4 +15,4 @@ html
         each record in records
           tr
             each prop in properties
-              td= record.properties[prop]
+              td= record.properties[prop] || '-'
