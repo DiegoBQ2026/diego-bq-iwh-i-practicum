@@ -26,3 +26,21 @@ ___
 - All work must be your own. During the grading process we will check the revision history. Submissions that do not meet this requirement will not be considered.
 - You must have at least two new routes in your index.js file and one new pug template for the homepage.
 - You must create a developer test account and link to it in your README.md file. Submissions that do not meet this requirement will not be considered.
+
+## Description
+
+Node.js application that connects to HubSpot via private app authentication and performs CRUD operations on a custom CRM object using the HubSpot CRM API v3.
+
+## Setup
+
+1. Clone the repository.
+2. Run `npm install`.
+3. Create a `.env` file with `HUBSPOT_PRIVATE_APP_TOKEN=your_token`.
+4. Run `node index.js`.
+5. Open `http://localhost:3000`.
+
+## Routes
+
+- GET / - Homepage showing custom object records
+- GET /update-cobj - Form to add a new record
+- POST /update-cobj - Submits form data to HubSpot API
