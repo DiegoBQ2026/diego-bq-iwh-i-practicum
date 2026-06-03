@@ -10,7 +10,7 @@ html
       thead
         tr
           each prop in properties
-            th= prop
+            th= prop.charAt(0).toUpperCase() + prop.slice(1)
       tbody
         each record in records
           tr
